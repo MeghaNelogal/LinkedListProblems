@@ -4,60 +4,73 @@ public class Program
 {
     public static void Main(String[] args)
     {
-
-        Console.WriteLine(" ***** WELCOME IN THE DATA STRUCTURE *****");
-        LinkedList list = new LinkedList();
-        bool check = true;
-        Console.WriteLine(" \n1. Display Linked List Data\n2. Dislpay Appeded Element list\n3. Adding Data at the perticular Position\n4. Delete Data At Perticular Position\n5.  Deleting Last Index Elements\n6. Searching Elements In the Linked List\n7. End The Execution");
-        while (check)
+        Console.WriteLine("Welcome to Linked List Program");
+        bool end = true;
+        Console.WriteLine("Enter Option\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.RemoveFirstElement\n5.RemoveLastElement\n6.Search Node\n7.InsertNewData\n8.End Of Program ");
+        while (end)
         {
-            Console.WriteLine("ENTER THE ABOVE OPTION TO EXECUTE THE METHODS");
+            LinkedList list = new LinkedList();
+            Console.WriteLine("\nEnter Option For Exicute The Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
-                    Console.WriteLine(" DISPLAYING ELEMENT OF THE LINKED LIST");
                     list.Add(56);
                     list.Add(30);
                     list.Add(70);
                     list.Display();
                     break;
                 case 2:
-                    Console.WriteLine("DISPLAYING ELEMENT OF THE LINKED LIST");
+                    list.AddInReverseOrder(70);
+                    list.Add(30);
                     list.Add(56);
-                    list.Append(30);
-                    list.Append(70);
+                    list.Display();
                     break;
                 case 3:
-                    Console.WriteLine("ADDING  ELEMENT ON PERTICULAR POSITION IN THE LINKED LIST");
                     list.Add(56);
                     list.Add(70);
-                    int a = list.Search(56);
-                    list.InsertAtPerticularPosition(a + 1, 30);
+                    int num = list.Search(56);
+                    list.InsertAtParticularPosition(num + 1, 30);
                     list.Display();
                     break;
                 case 4:
-                    Console.WriteLine("DELETING ELEMENT AT PERTICULAR POSITION IN THE LINKED LIST");
-                    Console.WriteLine("Enter the position of the Element");
-                    int index = Convert.ToInt32(Console.ReadLine());
-                    list.DeleteNodeAtPerticularPosition(index);
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    list.RemoveFirstNode();
                     list.Display();
                     break;
                 case 5:
-                    Console.WriteLine("DELETING  AT POSITION ELEMENT IN THE LINKED LIST");
-                    list.DeleteLastIndex();
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    list.RemoveLastNode();
                     list.Display();
                     break;
                 case 6:
-                    Console.WriteLine("SEARCHING ELEMENT IN THE LINKED LIST");
-                    int node = list.Search(30);
-                    Console.WriteLine("element present on the index:-> " + node);
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    list.Search(30);
+                    break;
+                case 7:
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    int newNode = list.Search(30);
+                    list.InsertAtParticularPosition(newNode + 1, 40);
                     list.Display();
                     break;
-                case 0:
-                    check = false;
+                case 8:
+                    end = false;
+                    Console.WriteLine("Program Is Ended.");
+                    break;
+                default:
+                    Console.WriteLine("Enter The Correct Option");
                     break;
             }
         }
     }
 }
+
+       
