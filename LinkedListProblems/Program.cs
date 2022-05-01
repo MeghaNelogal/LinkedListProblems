@@ -4,53 +4,53 @@ public class Program
 {
     public static void Main(String[] args)
     {
-        Console.WriteLine("Welcome to Linked List Program");
-        bool end = true;
-        Console.WriteLine("Enter Option\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.RemoveFirstNode\n5.End Of Program ");
-        while (end)
+        Console.WriteLine("WELCOME IN THE DATA STRUCTURE");
+        LinkedList list = new LinkedList();
+        bool check = true;
+        Console.WriteLine("\n1. Display Linked List Data\n2. Dislpay Appeded Element list\n3. Adding Data at the perticular Position\n4. Delete Data At Perticular Position\n5. Deleting Last Index Elements");
+        while (check)
         {
-            LinkedList list = new LinkedList();
-            Console.WriteLine("\nEnter Option To Execute The Program");
+            Console.WriteLine("ENTER THE ABOVE OPTION TO EXECUTE THE METHODS");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
+                    Console.WriteLine("DISPLAYING ELEMENT OF THE LINKED LIST");
                     list.Add(56);
                     list.Add(30);
                     list.Add(70);
                     list.Display();
                     break;
                 case 2:
-                    list.AddInReverseOrder(70);
-                    list.Add(30);
+                    Console.WriteLine("DISPLAYING ELEMENT OF THE LINKED LIST");
                     list.Add(56);
-                    list.Display();
+                    list.Append(30);
+                    list.Append(70);
                     break;
                 case 3:
+                    Console.WriteLine("ADDING  ELEMENT ON PERTICULAR POSITION IN THE LINKED LIST");
                     list.Add(56);
                     list.Add(70);
-                    int num = list.Search(56);
-                    list.InsertAtParticularPosition(num + 1, 30);
+                    int a = list.Search(56);
+                    list.InsertAtPerticularPosition(a + 1, 30);
                     list.Display();
                     break;
                 case 4:
-                    list.Add(56);
-                    list.Add(30);
-                    list.Add(70);
-                    list.RemoveFirstNode();
+                    Console.WriteLine("DELETING ELEMENT AT PERTICULAR POSITION IN THE LINKED LIST");
+                    Console.WriteLine("Enter the position of the Element");
+                    int index = Convert.ToInt32(Console.ReadLine());
+                    list.DeleteNodeAtPerticularPosition(index);
                     list.Display();
                     break;
                 case 5:
-                    end = false;
-                    Console.WriteLine("Program Is Ended.");
+                    Console.WriteLine("DELETING  AT POSITION ELEMENT IN THE LINKED LIST");
+                    list.DeleteLastIndex();
+                    list.Display();
                     break;
-                default:
-                    Console.WriteLine("Enter The Correct Option");
+                case 0:
+                    check = false;
                     break;
             }
         }
     }
-};
-    
-
-
+}

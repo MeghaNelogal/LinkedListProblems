@@ -24,45 +24,43 @@ namespace LinkedListProblems
                     temp = temp.next;
                 }
                 temp.next = node;
+                Console.WriteLine(node.data + " " + "inserted into Linked List ");
             }
-            Console.WriteLine("{0} Inserted into Linked List\n", node.data);
+        }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            Node temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = node;
+            Console.WriteLine(node.data + " " + "Appended into Linked List ");
+            Display();
+
         }
         public void Display()
         {
-            Node temp = this.head;
+            Node temp = head;
             if (temp == null)
             {
-                Console.WriteLine("LinkList Is Empty");
-                return;
+                Console.WriteLine("There is no element int he linked List");
             }
             while (temp != null)
             {
-                Console.Write(temp.data + " ");
+                Console.Write(temp.data + "  ");
                 temp = temp.next;
             }
+            Console.WriteLine(" ");
         }
-        public void AddInReverseOrder(int data)
-        {
-            Node newNode = new Node(data); 
-            if (head == null)
-            {
-                head = newNode; 
-            }
-            else
-            {
-                Node temp = head;
-                head = newNode;
-                head.next = temp;
-            }
-        }
-        public int Search(int value)
+        public int Search(int addedData)
         {
             Node node = this.head;
             int count = 0;
             while (node != null)
             {
-
-                if (node.data == value)
+                if (node.data == addedData)
                 {
                     return count;
                 }
@@ -71,43 +69,70 @@ namespace LinkedListProblems
             }
             return count;
         }
-
-        public Node InsertAtParticularPosition(int position, int data)
+        public Node InsertAtPerticularPosition(int position, int data)
         {
-            Node newestNode = new Node(data);
+            var newNode = new Node(data);
             if (this.head == null)
             {
-                return newestNode;
+                return newNode;
             }
             if (position == 0)
             {
-                newestNode.next = this.head;
-                this.head = newestNode;
-                return this.head;
+                newNode.next = head;
+                head = newNode;
+                return head;
             }
             Node prev = null;
             Node current = this.head;
             int count = 0;
             while (current != null && count < position)
             {
+
+
                 prev = current;
                 current = current.next;
                 count++;
             }
-            newestNode.next = prev.next;
-            prev.next = newestNode;
-            Console.WriteLine("Data Inserted");
+            newNode.next = prev.next;
+            prev.next = newNode;
             return this.head;
         }
-        internal Node RemoveFirstNode()
+        public void DeleteNodeAtPerticularPosition(int position)
         {
             if (this.head == null)
             {
+                Console.WriteLine("Linked List is Empty");
+            }
+            Node temp = this.head;
+            if (position == 0)
+            {
+                this.head = temp.next;
+            }
+            for (int i = 0; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+            if (temp == null || temp.next == null) { }
+            {
+                return;
+            }
+            Node next = temp.next.next;
+            temp.next = null; ;
+        }
+        public Node DeleteLastIndex()
+        {
+            if (head == null)
+            {
                 return null;
             }
-            this.head = this.head.next;
-            Console.WriteLine("First Node Is Deleted SuccesFully ");
-            return this.head;
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            return head;
         }
+
     }
 }
