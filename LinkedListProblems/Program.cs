@@ -4,10 +4,11 @@ public class Program
 {
     public static void Main(String[] args)
     {
-        Console.WriteLine("WELCOME IN THE DATA STRUCTURE");
+
+        Console.WriteLine(" ***** WELCOME IN THE DATA STRUCTURE *****");
         LinkedList list = new LinkedList();
         bool check = true;
-        Console.WriteLine("\n1. Display Linked List Data\n2. Dislpay Appeded Element list\n3. Adding Data at the perticular Position\n4. Delete Data At Perticular Position\n5. Deleting Last Index Elements");
+        Console.WriteLine(" \n1. Display Linked List Data\n2. Dislpay Appeded Element list\n3. Adding Data at the perticular Position\n4. Delete Data At Perticular Position\n5.  Deleting Last Index Elements\n6. Searching Elements In the Linked List\n7. End The Execution");
         while (check)
         {
             Console.WriteLine("ENTER THE ABOVE OPTION TO EXECUTE THE METHODS");
@@ -15,7 +16,7 @@ public class Program
             switch (option)
             {
                 case 1:
-                    Console.WriteLine("DISPLAYING ELEMENT OF THE LINKED LIST");
+                    Console.WriteLine(" DISPLAYING ELEMENT OF THE LINKED LIST");
                     list.Add(56);
                     list.Add(30);
                     list.Add(70);
@@ -45,6 +46,12 @@ public class Program
                 case 5:
                     Console.WriteLine("DELETING  AT POSITION ELEMENT IN THE LINKED LIST");
                     list.DeleteLastIndex();
+                    list.Display();
+                    break;
+                case 6:
+                    Console.WriteLine("SEARCHING ELEMENT IN THE LINKED LIST");
+                    int node = list.Search(30);
+                    Console.WriteLine("element present on the index:-> " + node);
                     list.Display();
                     break;
                 case 0:

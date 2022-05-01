@@ -133,6 +133,5 @@ namespace LinkedListProblems
             newNode.next = null;
             return head;
         }
-
     }
 }
