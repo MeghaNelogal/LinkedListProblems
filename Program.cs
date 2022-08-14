@@ -6,8 +6,8 @@
         {
             Console.WriteLine("Welcome To Linked List Problems");
 
-            LinkedList list = new LinkedList();
-            Console.WriteLine("1. press 1 to display\n2. press 2 to display append data");
+            LinkedList list = new LinkedList();          
+            Console.WriteLine("1. press 1 to display\n2. press 2 to display append data\n3. press 3 Insert data between to element");
             bool check = true;
             while (check)
             {
@@ -28,10 +28,19 @@
                         list.Append(70);
                         list.Display();
                         break;
+                    case 3:
+                        Console.WriteLine("Insert data between to element");
+                        list.Add(56);
+                        list.Add(70);
+                        int a = list.Search(56);
+                        list.InsertData(a + 1, 30);
+
+                        list.Display();
+                        break;
                 }
             }
         }
     }
 }
-    
+   
   
