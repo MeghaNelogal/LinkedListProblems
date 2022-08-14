@@ -6,46 +6,55 @@
         {
             Console.WriteLine("Welcome To Linked List Problems");
 
-            LinkedList list = new LinkedList();
-            Console.WriteLine("1. press 1 to display\n2. press 2 to display append data\n3. press 3 Insert data between to element\n4. press 4 to delete node data");
-            bool check = true;
-            while (check)
+           
+            bool end = true;
+            Console.WriteLine("Enter Option\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.RemoveFirstElement\n5.RemoveLastElement\n6.End Of Program ");
+            while (end)
             {
+                LinkedList list = new LinkedList();
+                Console.WriteLine("\nEnter Option For Exicute The Program");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("Display add element");
                         list.Add(56);
                         list.Add(30);
                         list.Add(70);
                         list.Display();
                         break;
                     case 2:
-                        Console.WriteLine("Append element");
+                        list.AddInReverseOrder(70);
+                        list.Add(30);
                         list.Add(56);
-                        list.Append(30);
-                        list.Append(70);
                         list.Display();
                         break;
                     case 3:
-                        Console.WriteLine("Insert data between to element");
                         list.Add(56);
                         list.Add(70);
-                        int a = list.Search(56);
-                        list.InsertData(a + 1, 30);
-
+                        int num = list.Search(56);
+                        list.InsertAtParticularPosition(num + 1, 30);
                         list.Display();
                         break;
                     case 4:
-                        Console.WriteLine("Delete first element in Node");
                         list.Add(56);
+                        list.Add(30);
                         list.Add(70);
-                        list.DeleteFirstNode();
+                        list.RemoveFirstNode();
                         list.Display();
                         break;
+                    case 5:
+                        list.Add(56);
+                        list.Add(30);
+                        list.Add(70);
+                        list.RemoveLastNode();
+                        list.Display();
+                        break;
+                    case 6:
+                        end = false;
+                        Console.WriteLine("Program Is Ended.");
+                        break;
                     default:
-                        Console.WriteLine("press above key");
+                        Console.WriteLine("Enter The Correct Option");
                         break;
                 }
             }
