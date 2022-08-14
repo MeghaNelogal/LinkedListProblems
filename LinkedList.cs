@@ -24,38 +24,39 @@ namespace LinkedListProblem
                     temp = temp.next;
                 }
                 temp.next = node;
+                Console.WriteLine("inserted data: " + node.data);
             }
-            Console.WriteLine("{0} Inserted into Linked List", node.data);
+
+        }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            Node temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = node;
+            Console.WriteLine(node.data + " Append data");
         }
         public void Display()
         {
-            Node temp = this.head;
+            Node temp = head;
             if (temp == null)
             {
-                Console.WriteLine("LinkList Is Empty");
-                return;
-            }
-            while (temp != null)
-            {
-                Console.Write(temp.data + " ");
-                temp = temp.next;
-            }
-        }
-        public void AddInReverseOrder(int data)
-        {
-            Node newNode = new Node(data); // (56,null)
-            if (head == null)
-            {
-                head = newNode; // (70,null)
+                Console.WriteLine("empty");
             }
             else
             {
-                Node temp = head;// (30,next)->(70,null)
-                head = newNode;//(56,null)
-                head.next = temp;//(56,next)->(30,next)->(70,null)
+                while (temp != null)
+                {
+                    Console.WriteLine(temp.data + " ");
+                    temp = temp.next;
+                }
             }
         }
     }
 }
+   
 
    
