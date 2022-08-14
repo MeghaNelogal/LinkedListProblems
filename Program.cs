@@ -6,8 +6,8 @@
         {
             Console.WriteLine("Welcome To Linked List Problems");
 
-            LinkedList list = new LinkedList();          
-            Console.WriteLine("1. press 1 to display\n2. press 2 to display append data\n3. press 3 Insert data between to element");
+            LinkedList list = new LinkedList();
+            Console.WriteLine("1. press 1 to display\n2. press 2 to display append data\n3. press 3 Insert data between to element\n4. press 4 to delete node data");
             bool check = true;
             while (check)
             {
@@ -37,10 +37,18 @@
 
                         list.Display();
                         break;
+                    case 4:
+                        Console.WriteLine("Delete first element in Node");
+                        list.Add(56);
+                        list.Add(70);
+                        list.DeleteFirstNode();
+                        list.Display();
+                        break;
+                    default:
+                        Console.WriteLine("press above key");
+                        break;
                 }
             }
         }
     }
 }
-   
-  
